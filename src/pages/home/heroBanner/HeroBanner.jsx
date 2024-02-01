@@ -4,9 +4,8 @@ import { useNavigate } from "react-router-dom";
 import useFetch from "../../../hooks/useFetch";
 import { useSelector } from "react-redux";
 
-import Img from "../../../components/lazyloadimage/Img";
+import Img from "../../../components/Lazyloadimage/Img";
 import ContentWrapper from "../../../components/contentWrapper/ContentWrapper";
-
 
 const HeroBanner = () => {
   const [background, setBackground] = useState("");
@@ -35,26 +34,23 @@ const HeroBanner = () => {
           <Img src={background} alt="" />
         </div>
       )}
-      <div className="opacity-layer">
-
-      </div>
+      <div className="opacity-layer"></div>
       <ContentWrapper>
-          <div className="heroBannerContent">
-            <span className="title">Welcome</span>
-            <span className="subtitle">
-              Millions of movies,TV shows and people to discover, Explore Now...{" "}
-            </span>
-            <div className="searchInput">
-              <input
-                type="text"
-                onChange={(e) => setQuery(e.target.value)}
-                onKeyUp={searcjQueryHandler}
-                placeholder="Search For Movies or TV Shows..."
-              />
-              <button>Search</button>
-            </div>
+        <div className="heroBannerContent">
+          <span className="title">Welcome</span>
+          <span className="subtitle">
+            Millions of movies,TV shows and people to discover, Explore Now...{" "}
+          </span>
+          <div className="searchInput">
+            <input
+              type="text"
+              onChange={(e) => setQuery(e.target.value)}
+              onKeyUp={searcjQueryHandler}
+              placeholder="Search For Movies or TV Shows..."
+            />
+            <button>Search</button>
           </div>
-        
+        </div>
       </ContentWrapper>
     </div>
   );
